@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Clips</title>
+    <style>
+        .audio-container {
+            display: flex;
+            align-items: center;
+            gap: 20px; /* Adjust the gap between audio items */
+        }
+
+        .audio-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .audio-label {
+            margin-bottom: 5px;
+            font-size: 22px;
+        }
+
+        .audio-label-2 {
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+
+        .audio-subitem {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+    </style>
+</head>
+<body>
+
+84-121550-0027.wav
+<table>
+    <!-- 第一行 -->
+    <tr>
+        <!-- 第一列第一行 -->
+        <td>
+            <div class="audio-item">
+                <span class="audio-label">original:</span>
+                <audio controls>
+                    <source src="path/to/original.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </td>
+        <!-- 第二列 -->
+        <td rowspan="2">
+            <div class="audio-item">
+                <span class="audio-label">protected:</span>
+                <div class="audio-subitem">
+                    <span class="audio-label-2">mifgsm:</span>
+                    <audio controls>
+                        <source src="path/to/protected1.mp3" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <span class="audio-label-2">nifgsm:</span>
+                    <audio controls>
+                        <source src="path/to/protected2.mp3" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <span class="audio-label-2">gar:</span>
+                    <audio controls>
+                        <source src="path/to/protected3.mp3" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+        </td> <!-- rowspan="2" 表示这个单元格跨越两行 -->
+        <!-- 第三列 -->
+        <td rowspan="2">
+            <div class="audio-item">
+                <span class="audio-label">adv:</span>
+                <div class="audio-subitem">
+                    <span class="audio-label-2">mifgsm:</span>
+                    <audio controls>
+                        <source src="path/to/protected1.mp3" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <span class="audio-label-2">nifgsm:</span>
+                    <audio controls>
+                        <source src="path/to/protected2.mp3" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <span class="audio-label-2">gar:</span>
+                    <audio controls>
+                        <source src="path/to/protected3.mp3" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+        </td> <!-- rowspan="2" 表示这个单元格也跨越两行 -->
+    </tr>
+    <!-- 第二行，第一列第二行 -->
+    <tr>
+        <td>
+            <div class="audio-item">
+                <span class="audio-label">regenerated:</span>
+                <audio controls>
+                    <source src="path/to/regenerated.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </td>
+
+    </tr>
+</table>
+
+84-121550-0027.wav
+<table>
+    <!-- 第一行 -->
+    <tr>
+        <!-- 第一列第一行 -->
+        <td>
+            <div class="audio-item">
+                <span class="audio-label">original:</span>
+                <audio controls>
+                    <source src="path/to/original.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </td>
+        <!-- 第二列 -->
+        <td rowspan="2">
+            <div class="audio-item">
+                <span class="audio-label">protected:</span>
+                <div class="audio-subitem">
+                    <span class="audio-label-2">mifgsm:</span>
+                    <audio controls>
+                        <source src="path/to/protected1.mp3" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <span class="audio-label-2">nifgsm:</span>
+                    <audio controls>
+                        <source src="path/to/protected2.mp3" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <span class="audio-label-2">gar:</span>
+                    <audio controls>
+                        <source src="path/to/protected3.mp3" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+        </td> <!-- rowspan="2" 表示这个单元格跨越两行 -->
+        <!-- 第三列 -->
+        <td rowspan="2">
+            <div class="audio-item">
+                <span class="audio-label">adv:</span>
+                <div class="audio-subitem">
+                    <span class="audio-label-2">mifgsm:</span>
+                    <audio controls>
+                        <source src="path/to/protected1.mp3" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <span class="audio-label-2">nifgsm:</span>
+                    <audio controls>
+                        <source src="path/to/protected2.mp3" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <span class="audio-label-2">gar:</span>
+                    <audio controls>
+                        <source src="path/to/protected3.mp3" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+        </td> <!-- rowspan="2" 表示这个单元格也跨越两行 -->
+    </tr>
+    <!-- 第二行，第一列第二行 -->
+    <tr>
+        <td>
+            <div class="audio-item">
+                <span class="audio-label">regenerated:</span>
+                <audio controls>
+                    <source src="path/to/regenerated.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </td>
+
+    </tr>
+</table>
+<!--<div class="audio-container">-->
+<!--    <div class="audio-item">-->
+<!--        <span class="audio-label">original:</span>-->
+<!--        <audio controls>-->
+<!--            <source src="path/to/original.mp3" type="audio/mp3">-->
+<!--            Your browser does not support the audio element.-->
+<!--        </audio>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        <span class="audio-label">regenerated:</span>-->
+<!--        <audio controls>-->
+<!--            <source src="path/to/regenerated.mp3" type="audio/mp3">-->
+<!--            Your browser does not support the audio element.-->
+<!--        </audio>-->
+<!--    </div>-->
+
+
+<!--    &lt;!&ndash;        <div class="audio-item">&ndash;&gt;-->
+<!--    &lt;!&ndash;            <span class="audio-label">regenerated:</span>&ndash;&gt;-->
+<!--    &lt;!&ndash;            <audio controls>&ndash;&gt;-->
+<!--    &lt;!&ndash;                <source src="path/to/regenerated.mp3" type="audio/mp3">&ndash;&gt;-->
+<!--    &lt;!&ndash;                Your browser does not support the audio element.&ndash;&gt;-->
+<!--    &lt;!&ndash;            </audio>&ndash;&gt;-->
+<!--    &lt;!&ndash;        </div>&ndash;&gt;-->
+<!--    <div class="audio-item">-->
+<!--        <span class="audio-label">protected:</span>-->
+<!--        <div class="audio-subitem">-->
+<!--            <span class="audio-label-2">mifgsm:</span>-->
+<!--            <audio controls>-->
+<!--                <source src="path/to/protected1.mp3" type="audio/mp3">-->
+<!--                Your browser does not support the audio element.-->
+<!--            </audio>-->
+<!--            <span class="audio-label-2">nifgsm:</span>-->
+<!--            <audio controls>-->
+<!--                <source src="path/to/protected2.mp3" type="audio/mp3">-->
+<!--                Your browser does not support the audio element.-->
+<!--            </audio>-->
+<!--            <span class="audio-label-2">gar:</span>-->
+<!--            <audio controls>-->
+<!--                <source src="path/to/protected3.mp3" type="audio/mp3">-->
+<!--                Your browser does not support the audio element.-->
+<!--            </audio>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="audio-item">-->
+<!--        <span class="audio-label">adv:</span>-->
+<!--        <div class="audio-subitem">-->
+<!--            <span class="audio-label-2">mifgsm:</span>-->
+<!--            <audio controls>-->
+<!--                <source src="path/to/protected1.mp3" type="audio/mp3">-->
+<!--                Your browser does not support the audio element.-->
+<!--            </audio>-->
+<!--            <span class="audio-label-2">nifgsm:</span>-->
+<!--            <audio controls>-->
+<!--                <source src="path/to/protected2.mp3" type="audio/mp3">-->
+<!--                Your browser does not support the audio element.-->
+<!--            </audio>-->
+<!--            <span class="audio-label-2">gar:</span>-->
+<!--            <audio controls>-->
+<!--                <source src="path/to/protected3.mp3" type="audio/mp3">-->
+<!--                Your browser does not support the audio element.-->
+<!--            </audio>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+</body>
+</html>
+
+
+
