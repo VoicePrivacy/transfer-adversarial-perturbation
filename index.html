@@ -86,6 +86,19 @@
         audio:hover {
             background-color: #e7f3fe;
         }
+
+        .image-container {
+            text-align: center; /* 图像居中 */
+            margin: 20px;
+        }
+
+        .image-container img {
+            width: 800px; /* 图像宽度 */
+            height: auto; /* 自动调整高度 */
+            border: 2px solid #ccc; /* 添加边框 */
+            border-radius: 10px; /* 圆角边框 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* 添加阴影 */
+        }
     </style>
 </head>
 <body>
@@ -108,8 +121,12 @@
     voice anonymization framework.
 </div>
 <br>
+<h3 style="text-align: left">Comparison of Mel Spectrograms between Original Speech and Speaker-adversarial Speech</h3>
+<div class="image-container">
+    <img src="mel_spectrogram.png" alt="示例图像">
+</div>
 
-
+<h3 style="text-align: left">Demo sample</h3>
 <!-- 文件名: 7850-281318-0002.wav -->
 <div class="audio-container">
     <div style="width: 250px">
@@ -474,7 +491,6 @@
         </tr>
     </table>
 </div>
-
 
 
 </body>
