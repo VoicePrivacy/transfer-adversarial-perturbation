@@ -106,6 +106,21 @@
             border-radius: 10px; /* 圆角边框 */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* 添加阴影 */
         }
+
+        .common-content {
+            width: 95%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .common-table {
+            width: 82%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -132,11 +147,30 @@
 <div class="image-container">
     <img src="mel_spectrogram.png" alt="示例图像">
 </div>
-<h3 style="text-align: left">Ignorant</h3>
-<table style="width: 82%; margin: 0 auto; border-collapse: collapse; text-align: center;">
-    <caption>The EERs (%) obtained in the ignorant scenario. The results include those obtained on the original, regenerated, and
+
+<h2 style="text-align: left">1. Experiments</h2>
+<h2 style="text-align: left">1.1 Configurations</h2>
+<div class="common-content">
+
+    To further validate our approach, we conducted two additional experiments. In the first experiments, the number of iterations K was set
+    to 10 and 20, respectively, while all other configurations remained consistent with the proposed method (Pro) described in Section
+    4.1 of the paper. In the second experiments, the original speech was used as supervision to replace the regenerated speech, with all
+    other settings identical to those of the
+    proposed method in Section 4.1.
+
+</div>
+<h2 style="text-align: left">1.2 ASV evaluations</h2>
+<div class="common-content">
+    The voice-protection capability of adversarial speech and our proposed method were compared in both ignorant and
+    informed scenarios, as detailed in Section III-B of the paper.
+</div>
+
+<h2 style="text-align: left">(1) Ignorant</h2>
+<table class="common-table">
+    <caption>TABLE I: The EERs (%) obtained in the ignorant scenario. The results include those obtained on the original, regenerated, and
         speaker-adversarial (Adv) speech using MI-FGSM, NI-FGSM, and GRA methods, as well as the corresponding anonymized speech generated
-        with our proposed (Pro) method. The evaluations conducted on ECAPA-TDNN (ECAPA), ResNet (Res), and i-vector (ivec) are presented.
+        with our proposed (Pro) method. The evaluations conducted on ECAPA-TDNN (ECAPA), ResNet (Res), and i-vector (ivec) are presented. In
+        this table, Pro(10) denotes the proposed method with 10 iterations, while Pro(20) denotes the proposed method with 20 iterations.
     </caption>
     <thead>
     <tr>
@@ -230,35 +264,29 @@
     </tr>
     </tbody>
 </table>
-<div style="width: 82%; margin: 0 auto; border-collapse: collapse; text-align: left;font-weight: bold;">
-    Additionally, we evaluate the anonymized speech generated using our proposed method (Pro) with various configurations, including
-    different
-    numbers of iterations (Pro(K=10) and Pro(K=20)) and the using the original speech as supervision (Pro(ori)).
-
-    Furthermore, the performance of the proposed method with different numbers of iterations (K=10 and K=20) shows that the number of
-    iterations
-    can significantly influence the anonymization effectiveness. For example, in the ResNet model under MI-FGSM, Pro(K=20) achieves an EER
-    of
-    4.54%, which is lower than Pro(K=10) with an EER of 2.60%. This suggests that increasing the number of iterations (K) enhances the
-    protecting ability of the anonymized speech.
-    <br><br>
-    Also, the Pro(ori) under the supervision of original speech achieves higher EER than method (Pro), One possible reason for this
-    observation is that: during the iteration, when the number of iterations k=0, the anonymized speech is identical to the regenerated
-    speech,
-    so the anonymized speech and the regenerated speech may both incorporate errors introduced by the YourTTS model. When replacing Regen
-    Speech
-    with the original speech as
-    supervision, the original speech used for supervision does not have such errors. This discrepancy effectively increases the difference
-    between the speaker embeddings of the anonymized speech and the supervised speech. Consequently, the speaker embeddings derived during
-    the
-    iterative process may contain errors, leading to an increase in EER.
+<br>
+<div class="common-content">
+    As illustrated in Table I, the performance of the proposed method with varying numbers of iterations (K=10 and K=20) demonstrates that
+    the number of iterations significantly impacts the anonymization effectiveness. For instance, in the ResNet model under MI-FGSM,
+    Pro(K=20) achieves an Equal Error Rate (EER) of 4.54%, which is higher than Pro(K=10) with an EER of 2.60%. This indicates that
+    increasing the number of iterations (K) enhances the anonymization capability of the proposed method.
+    <br>
+    Additionally, the Pro(ori) method, which uses the original speech as supervision, achieves a higher EER compared to the Pro method. One
+    possible reason for this observation is that during the iterative process, when the number of iterations k=0, the anonymized speech is
+    identical to the regenerated speech. Consequently, both the anonymized and regenerated speech may inherit errors introduced by the
+    YourTTS model. In contrast, when the original speech is used as supervision, it does not contain such errors. This discrepancy
+    effectively increases the difference between the speaker embeddings of the anonymized speech and the supervised speech. As a result, the
+    speaker embeddings derived during the iterative process may contain errors, leading to an increase in EER.
 </div>
-<h3 style="text-align: left">Informed</h3>
-<table style="width: 82%; margin: 0 auto; border-collapse: collapse; text-align: center;">
+
+
+<h2 style="text-align: left">(2) Informed</h2>
+<table class="common-table">
     <caption style="text-align: center; font-weight: bold; margin-bottom: 10px;">
         TABLE II: The EERs(%) on the original, speaker-adversarial, and anonymized speech generated with our proposed method in the informed
         scenario. The adversarial utterances (Adv) obtained with MI-FGSM, NI-FGSM, and GRA are presented, together with the corresponding
-        anonymized utterances generated by the proposed method (Pro).
+        anonymized utterances generated by the proposed method (Pro). Pro(10) and Pro(20) denote the proposed method with 10 and 20
+        iterations, respectively.
     </caption>
     <thead>
     <tr>
@@ -306,9 +334,15 @@
     </tr>
     </tbody>
 </table>
+<br>
+<div class="common-content">
+    As shown in Table III(a) , the proposed method achieved comparable, even slightly higher EERs, than Cls, indicating its effectiveness in
+    obscuring the machine-discernible speaker attributes. Furthermore, as the number of iterations increases, the EER continues to rise,
+    suggesting that more iterations contribute to more effective anonymization in Informed scenario. Additionally, the anonymized speech
+    generated using the original speech as supervision (Pro(ori)) exhibits a slightly higher EER than proposed method (Pro).
+</div>
 
-
-<h3 style="text-align: left">human perception</h3>
+<h2 style="text-align: left">1.3 Human perception evaluations</h2>
 <h3 style="text-align: left">Demo sample</h3>
 <!-- 文件名: 7850-281318-0002.wav -->
 <div class="audio-container">
