@@ -154,7 +154,7 @@
 
     To further validate our approach, we conducted two additional experiments. In the first experiments, the number of iterations K was set
     to 10 and 20, respectively, while all other configurations remained consistent with the proposed method (Pro) described in Section
-    4.1 of the paper. In the second experiments, the original speech was used as supervision to replace the regenerated speech, with all
+    4.1 of the paper. In the second experiments, the original speech was used as supervision for perceptual loss, with all
     other settings identical to those of the
     proposed method in Section 4.1.
 
@@ -336,7 +336,7 @@
 </table>
 <br>
 <div class="common-content">
-    As shown in Table III(a) , the proposed method achieved comparable, even slightly higher EERs, than Cls, indicating its effectiveness in
+    As shown in Table II, the proposed method achieved comparable, even slightly higher EERs, than Cls, indicating its effectiveness in
     obscuring the machine-discernible speaker attributes. Furthermore, as the number of iterations increases, the EER continues to rise,
     suggesting that more iterations contribute to more effective anonymization in Informed scenario. Additionally, the anonymized speech
     generated using the original speech as supervision (Pro(ori)) exhibits a slightly higher EER than proposed method (Pro).
@@ -380,7 +380,7 @@
 </table>
 <br>
 <div class="common-content">
-    As shown in the table, Regen-Pro outperforms Ori-Pro, indicating that the anonymized speech has a lower human perception preservation
+    As shown in the Table III, Regen-Pro outperforms Ori-Pro, indicating that the anonymized speech has a lower human perception preservation
     rate compared to the original speech. This can be attributed to the quality degradation inherent in the YourTTS model.
 </div>
 
