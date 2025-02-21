@@ -112,7 +112,7 @@
             margin: 0 auto;
             border-collapse: collapse;
             text-align: left;
-            font-weight: bold;
+            /*font-weight: bold;*/
         }
 
         .common-table {
@@ -143,60 +143,84 @@
     voice anonymization framework.
 </div>
 <br>
-<h3 style="text-align: left">1. Comparison of Mel Spectrograms between Original Speech and Speaker-adversarial Speech</h3>
+<h1 style="text-align: left">1. Supplementary materials</h1>
+<h3 style="text-align: left">1.1 Comparison of Mel-spectrograms from original and speaker-adversarial speech utterances</h3>
+<div class="common-content">
+    Fig. 2 illustrates the Mel-spectrograms of an original speech utterance and its speaker-adversarial variants, generated with 5, 10, and
+    20 iterations, respectively. The comparison reveals that as the number of iterations increases, the perturbation effects on the
+    Mel-spectrograms rises. This indicates that the perturbation is captured by the Mel-spectrogram, thereby validating the loss function
+    defined in (3).
+</div>
 <div class="image-container">
     <img src="mel_spectrogram.png" alt="示例图像">
 </div>
-
-<h2 style="text-align: left">2. Experiments</h2>
-<h2 style="text-align: left">2.1 Configurations</h2>
-<div class="common-content">
-
-    To further validate our approach, we conducted two additional experiments. In the first experiments, the number of iterations K was set
-    to 10 and 20, respectively, while all other configurations remained consistent with the proposed method (Pro) described in Section
-    4.1 of the paper. In the second experiments, the original speech was used as supervision for perceptual loss, with all
-    other settings identical to those of the
-    proposed method in Section 4.1.
-
-</div>
-<h2 style="text-align: left">2.2 ASV evaluations</h2>
-<div class="common-content">
-    The voice-protection capability of adversarial speech and our proposed method were compared in both ignorant and
-    informed scenarios, as detailed in Section III-B of the paper.
+<br>
+<div style="text-align: center;">Fig. 2: Mel-spectrograms of an original speech utterance and its speaker-adversarial variants, generated
+    with 5, 10, and 20 iterations
 </div>
 
-<h2 style="text-align: left">(1) Ignorant</h2>
+
+<h2 style="text-align: left">1.2. Supplementary experiments</h2>
+<!--<h2 style="text-align: left">2.1 Configurations</h2>-->
+<!--<div class="common-content">-->
+
+
+<!--, we conducted two additional experiments. In the first experiments, the number of iterations  <i>K</i> was set-->
+<!--to 10 and 20, respectively, while all other configurations remained consistent with the proposed method (Pro) described in Section-->
+<!--4.1 of the paper. In the second experiments, the original speech was used as supervision for perceptual loss, with all-->
+<!--other settings identical to those of the-->
+<!--proposed method in Section 4.1.-->
+<!--</div>-->
+<!--<h2 style="text-align: left">2.2 ASV evaluations</h2>-->
+<!--<div class="common-content">-->
+<!--    The voice-protection capability of adversarial speech and our proposed method were compared in both ignorant and-->
+<!--    informed scenarios, as detailed in Section III-B of the paper.-->
+<!--</div>-->
+
+<h2 style="text-align: left">1.2.1 Effects of iteration number <i>K</i></h2>
+
+<div class="common-content">
+    Extended experiments were performed to investigate the effects of the iteration number <i>K</i> for speaker-adversarial speech
+    generation
+    on the performance of asynchronous voice anonymization, with <i>K</i> set to 10 and 20. Evaluations were conducted in both ignorant and
+    informed scenarios, following their respective configurations outlined in Section V-B-1) and V-B-2 in the manuscript. Besides, the human
+    perception evaluation was performed following the configurations presented in Section V-C-2) in the manuscript. With the results, Table
+    I and II are expanded to be Table V and VI, respectively. The human perception preservation rates are presented in VIII.
+</div>
+<br>
 <table class="common-table">
-    <caption>TABLE I: The EERs (%) obtained in the ignorant scenario. The results include those obtained on the original, regenerated, and
+    <caption>TABLE V: The EERs (%) obtained in the ignorant scenario. The results include those obtained on the original, regenerated, and
         speaker-adversarial (Adv) speech using MI-FGSM, NI-FGSM, and GRA methods, as well as the corresponding anonymized speech generated
         with our proposed (Pro) method. The evaluations conducted on ECAPA-TDNN (ECAPA), ResNet (Res), and i-vector (ivec) are presented. In
-        this table, Pro(10) denotes the proposed method with 10 iterations, while Pro(20) denotes the proposed method with 20 iterations.
+        this table, Pro represents the proposed method where the speaker-adversarial perturbations were generated with 15 iterations
+        as configured in the manuscript. Pro(10) and Pro(20) denote the proposed method wherein the speaker-adversarial perturbations were
+        generated with 10 and 20 iterations, respectively.
     </caption>
     <thead>
     <tr>
         <th rowspan="2"></th>
         <th rowspan="2">Ori</th>
         <th rowspan="2">Regen</th>
-        <th colspan="5" style="text-align: center;">MI-FGSM</th>
-        <th colspan="5" style="text-align: center;">NI-FGSM</th>
-        <th colspan="5" style="text-align: center;">GRA</th>
+        <th colspan="4" style="text-align: center;">MI-FGSM</th>
+        <th colspan="4" style="text-align: center;">NI-FGSM</th>
+        <th colspan="4" style="text-align: center;">GRA</th>
     </tr>
     <tr>
         <th>Adv</th>
         <th>Pro</th>
-        <th>Pro(K=10)</th>
-        <th>Pro(K=20)</th>
-        <th>Pro(ori)</th>
+        <th>Pro(<i>K</i>=10)</th>
+        <th>Pro(<i>K</i>=20)</th>
+
         <th>Adv</th>
         <th>Pro</th>
-        <th>Pro(K=10)</th>
-        <th>Pro(K=20)</th>
-        <th>Pro(ori)</th>
+        <th>Pro(<i>K</i>=10)</th>
+        <th>Pro(<i>K</i>=20)</th>
+
         <th>Adv</th>
         <th>Pro</th>
-        <th>Pro(K=10)</th>
-        <th>Pro(K=20)</th>
-        <th>Pro(ori)</th>
+        <th>Pro(<i>K</i>=10)</th>
+        <th>Pro(<i>K</i>=20)</th>
+
     </tr>
     </thead>
     <tbody>
@@ -209,17 +233,17 @@
         <td>2.82</td>
         <td>3.93</td>
 
-        <td>3.54</td>
+
         <td>7.20</td>
         <td>3.92</td>
         <td>3.33</td>
         <td>4.57</td>
-        <td>4.22</td>
+
         <td>7.46</td>
         <td>3.76</td>
         <td>3.16</td>
         <td>4.44</td>
-        <td>4.20</td>
+
     </tr>
     <tr>
         <td>Res</td>
@@ -230,17 +254,17 @@
 
         <td>2.60</td>
         <td>4.54</td>
-        <td>4.53</td>
+
         <td>1.85</td>
         <td>4.23</td>
         <td>3.22</td>
         <td>5.36</td>
-        <td>5.23</td>
+
         <td>1.78</td>
         <td>4.17</td>
         <td>3.10</td>
         <td>4.69</td>
-        <td>4.51</td>
+
     </tr>
     <tr>
         <td>ivec</td>
@@ -250,50 +274,53 @@
         <td>2.89</td>
         <td>2.30</td>
         <td>3.19</td>
-        <td>2.87</td>
+
         <td>1.33</td>
         <td>2.59</td>
         <td>2.40</td>
         <td>3.11</td>
-        <td>2.90</td>
+
         <td>1.41</td>
         <td>2.82</td>
         <td>2.61</td>
         <td>3.44</td>
-        <td>3.20</td>
+
     </tr>
     </tbody>
 </table>
 <br>
 <div class="common-content">
-    As illustrated in Table I, the performance of the proposed method with varying numbers of iterations (K=10 and K=20) demonstrates that
-    the number of iterations significantly impacts the anonymization effectiveness. For instance, in the ResNet model under MI-FGSM,
-    Pro(K=20) achieves an Equal Error Rate (EER) of 4.54%, which is higher than Pro(K=10) with an EER of 2.60%. This indicates that
-    increasing the number of iterations (K) enhances the anonymization capability of the proposed method.
+    As presented in Table I, the performance of the proposed method with varying numbers of iterations (<i>K</i>=10 and <i>K</i>=20)
+    demonstrates that
+    the number of iterations significantly impacts the anonymization effectiveness. In the three evaluation models, with <i>K</i> increasing
+    from
+    10 to 20, higher EERs were obtained. This indicates that increasing iteration number <i>K</i> achieves stronger obscuration of the
+    machine-discernible speaker attributes in the ignorant evaluation scenario.
     <br>
-    Additionally, the Pro(ori) method, which uses the original speech as supervision, achieves a higher EER compared to the Pro method. One
-    possible reason for this observation is that during the iterative process, when the number of iterations k=0, the anonymized speech is
-    identical to the regenerated speech. Consequently, both the anonymized and regenerated speech may inherit errors introduced by the
-    YourTTS model. In contrast, when the original speech is used as supervision, it does not contain such errors. This discrepancy
-    effectively increases the difference between the speaker embeddings of the anonymized speech and the supervised speech. As a result, the
-    speaker embeddings derived during the iterative process may contain errors, leading to an increase in EER.
+    <!--    Additionally, the Pro(ori) method, which uses the original speech as supervision, achieves a higher EER compared to the Pro method. One-->
+    <!--    possible reason for this observation is that during the iterative process, when the number of iterations k=0, the anonymized speech is-->
+    <!--    identical to the regenerated speech. Consequently, both the anonymized and regenerated speech may inherit errors introduced by the-->
+    <!--    YourTTS model. In contrast, when the original speech is used as supervision, it does not contain such errors. This discrepancy-->
+    <!--    effectively increases the difference between the speaker embeddings of the anonymized speech and the supervised speech. As a result, the-->
+    <!--    speaker embeddings derived during the iterative process may contain errors, leading to an increase in EER.-->
 </div>
+<br>
 
-
-<h2 style="text-align: left">(2) Informed</h2>
+<!--<h2 style="text-align: left">1.2.2 Informed</h2>-->
 <table class="common-table">
     <caption style="text-align: center; font-weight: bold; margin-bottom: 10px;">
-        TABLE II: The EERs(%) on the original, speaker-adversarial, and anonymized speech generated with our proposed method in the informed
+        TABLE VI: The EERs(%) on the original, speaker-adversarial, and anonymized speech generated with our proposed method in the informed
         scenario. The adversarial utterances (Adv) obtained with MI-FGSM, NI-FGSM, and GRA are presented, together with the corresponding
-        anonymized utterances generated by the proposed method (Pro). Pro(10) and Pro(20) denote the proposed method with 10 and 20
-        iterations, respectively.
+        anonymized utterances generated by the proposed method (Pro). Pro represents the proposed method where the speaker-adversarial
+        perturbations were generated with 15 iterations as configured in the manuscript. Pro(10) and Pro(20) denote the proposed method
+        wherein the speaker-adversarial perturbations were generated with 10 and 20 iterations, respectively.
     </caption>
     <thead>
     <tr>
         <th style="border: 1px solid #000; padding: 8px; text-align: center;">Ori</th>
-        <th style="border: 1px solid #000; padding: 8px; text-align: center;" colspan="5">MI-FGSM</th>
-        <th style="border: 1px solid #000; padding: 8px; text-align: center;" colspan="5">NI-FGSM</th>
-        <th style="border: 1px solid #000; padding: 8px; text-align: center;" colspan="5">GRA</th>
+        <th style="border: 1px solid #000; padding: 8px; text-align: center;" colspan="4">MI-FGSM</th>
+        <th style="border: 1px solid #000; padding: 8px; text-align: center;" colspan="4">NI-FGSM</th>
+        <th style="border: 1px solid #000; padding: 8px; text-align: center;" colspan="4">GRA</th>
     </tr>
     </thead>
     <tbody>
@@ -301,77 +328,89 @@
         <td style="border: 1px solid #000; padding: 8px; text-align: center;" rowspan="2">3.53</td>
         <td style="border: 1px solid #000; padding: 8px; text-align: center;">Adv</td>
         <td style="border: 1px solid #000; padding: 8px; text-align: center;">Pro</td>
-        <td style="border: 1px solid #000; padding: 8px; text-align: center;">Pro(K=10)</td>
-        <td style="border: 1px solid #000; padding: 8px; text-align: center;">Pro(K=20)</td>
-        <td style="border: 1px solid #000; padding: 8px; text-align: center;">Pro(ori)</td>
+        <td style="border: 1px solid #000; padding: 8px; text-align: center;">Pro(<i>K</i>=10)</td>
+        <td style="border: 1px solid #000; padding: 8px; text-align: center;">Pro(<i>K</i>=20)</td>
+
         <td style="border: 1px solid #000; padding: 8px; text-align: center;">Adv</td>
         <td style="border: 1px solid #000; padding: 8px; text-align: center;">Pro</td>
-        <td style="border: 1px solid #000; padding: 8px; text-align: center;">Pro(K=10)</td>
-        <td style="border: 1px solid #000; padding: 8px; text-align: center;">Pro(K=20)</td>
-        <td style="border: 1px solid #000; padding: 8px; text-align: center;">Pro(ori)</td>
+        <td style="border: 1px solid #000; padding: 8px; text-align: center;">Pro(<i>K</i>=10)</td>
+        <td style="border: 1px solid #000; padding: 8px; text-align: center;">Pro(<i>K</i>=20)</td>
+
         <td style="border: 1px solid #000; padding: 8px; text-align: center;">Adv</td>
         <td style="border: 1px solid #000; padding: 8px; text-align: center;">Pro</td>
-        <td style="border: 1px solid #000; padding: 8px; text-align: center;">Pro(K=10)</td>
-        <td style="border: 1px solid #000; padding: 8px; text-align: center;">Pro(K=20)</td>
-        <td style="border: 1px solid #000; padding: 8px; text-align: center;">Pro(ori)</td>
+        <td style="border: 1px solid #000; padding: 8px; text-align: center;">Pro(<i>K</i>=10)</td>
+        <td style="border: 1px solid #000; padding: 8px; text-align: center;">Pro(<i>K</i>=20)</td>
+
     </tr>
     <tr>
         <td style="border: 1px solid #000; padding: 8px; text-align: center;">3.83</td>
         <td style="border: 1px solid #000; padding: 8px; text-align: center;">5.73</td>
         <td style="border: 1px solid #000; padding: 8px; text-align: center;">4.83</td>
         <td style="border: 1px solid #000; padding: 8px; text-align: center;">6.69</td>
-        <td style="border: 1px solid #000; padding: 8px; text-align: center;">6.40</td>
+
         <td style="border: 1px solid #000; padding: 8px; text-align: center;">3.86</td>
         <td style="border: 1px solid #000; padding: 8px; text-align: center;">5.44</td>
         <td style="border: 1px solid #000; padding: 8px; text-align: center;">4.90</td>
-        <td style="border: 1px solid #000; padding: 8px; text-align: center;">6.71</td>
+
         <td style="border: 1px solid #000; padding: 8px; text-align: center;">6.32</td>
         <td style="border: 1px solid #000; padding: 8px; text-align: center;">4.03</td>
         <td style="border: 1px solid #000; padding: 8px; text-align: center;">5.13</td>
         <td style="border: 1px solid #000; padding: 8px; text-align: center;">5.94</td>
         <td style="border: 1px solid #000; padding: 8px; text-align: center;">6.23</td>
-        <td style="border: 1px solid #000; padding: 8px; text-align: center;">6.14</td>
+
     </tr>
     </tbody>
 </table>
 <br>
 <div class="common-content">
-    As shown in Table II, the proposed method achieved comparable, even slightly higher EERs, than Cls, indicating its effectiveness in
-    obscuring the machine-discernible speaker attributes. Furthermore, as the number of iterations increases, the EER continues to rise,
-    suggesting that more iterations contribute to more effective anonymization in Informed scenario. Additionally, the anonymized speech
-    generated using the original speech as supervision (Pro(ori)) exhibits a slightly higher EER than proposed method (Pro).
-</div>
+    From Table VI, it can be observed that with <i>K</i> increasing from 10 to 20, higher EERs were obtained. This demonstrates that higher
+    K
+    obtains
+    stronger obscuration of the machine-discernible speaker attributes in the informed evaluation scenario.
 
-<h2 style="text-align: left">2.3 Human perception evaluations</h2>
+</div>
+<br>
+<!--<h2 style="text-align: left">2.3 Human perception evaluations</h2>-->
 <table class="common-table">
-    <caption>Human perception preservation rates (%) on Ori-Regen, Ori-Pro, Ori-Pro(ori), Regen-Cls, Regen-Proposed,
-        Regen-Proposed(beta=1),Regen-Pro(k=10) ,Regen-Pro(k=20),Regen-Pro(ori)
-        pairs.
+    <caption>Table VII: Human perception preservation rates (%) on Regen-Proposed(Pro),
+        Regen-Pro(<i>K</i>=10) , Regen-Pro(<i>K</i>=20) pairs.
     </caption>
     <thead>
     <tr>
-        <th>Ori-Regen</th>
-        <th>Ori-Pro</th>
-        <th>Ori-Pro(ori)</th>
-        <th>Regen-Cls</th>
         <th>Regen-Pro</th>
-        <th>Regen-Pro(beta=1)</th>
-        <th>Regen-Pro(k=10)</th>
-        <th>Regen-Pro(k=20)</th>
-        <th>Regen-Pro(ori)</th>
+        <th>Regen-Pro(<i>K</i>=10)</th>
+        <th>Regen-Pro(<i>K</i>=20)</th>
+
     </tr>
     </thead>
     <tbody>
     <tr>
-        <td>76.50</td>
-        <td>54.00</td>
-        <td>66.50</td>
-        <td>90.50</td>
+
         <td>93.50</td>
-        <td>82.00</td>
         <td>95.50</td>
         <td>85.00</td>
-        <td>X</td>
+        <!--        <th>Ori-Regen</th>-->
+        <!--        <th>Ori-Pro</th>-->
+        <!--        <th>Ori-Pro(ori)</th>-->
+        <!--        <th>Regen-Cls</th>-->
+        <!--        <th>Regen-Pro</th>-->
+        <!--        <th>Regen-Pro(beta=1)</th>-->
+        <!--        <th>Regen-Pro(<i>K</i>=10)</th>-->
+        <!--        <th>Regen-Pro(<i>K</i>=20)</th>-->
+        <!--        <th>Regen-Pro(ori)</th>-->
+        <!--    </tr>-->
+        <!--    </thead>-->
+        <!--    <tbody>-->
+        <!--    <tr>-->
+        <!--        <td>76.50</td>-->
+        <!--        <td>54.00</td>-->
+        <!--        <td>66.50</td>-->
+        <!--        <td>90.50</td>-->
+        <!--        <td>93.50</td>-->
+        <!--        <td>82.00</td>-->
+        <!--        <td>95.50</td>-->
+        <!--        <td>85.00</td>-->
+        <!--        <td>81.00</td>-->
     </tr>
     </tbody>
     <tfoot>
@@ -380,12 +419,266 @@
 </table>
 <br>
 <div class="common-content">
-    As shown in the Table III, Regen-Pro outperforms Ori-Pro, indicating that the anonymized speech has a lower human perception preservation
-    rate compared to the original speech. This can be attributed to the quality degradation inherent in the YourTTS model.
+    The results in Table VII indicate that as <i>K</i> increases from 10 to 20, the human perception rate declines. This suggests that a
+    higher <i>K</i> degrades the human perception preservation of the proposed asynchronous voice anonymization method. Considering the
+    machine perception protection capabilities shown in Tables V and VI, <i>K</i> was set to 15 in our proposed method to achieve a
+    trade-off
+    between human perception preservation and machine perception protection.
+</div>
+<br>
+<h2 style="text-align: left">1.2.2 Subjective evaluations with original speech as reference</h2>
+<div class="common-content">
+    Next, subjective evaluations were conducted with original speech as reference to measure the human perception preservation capability.
+    The human perception preservation rates obtained between Original(Ori)-Regenerated(Regen), Ori-Proposed(Pro), Regen-Pro pairs
+    are presented in Table VIII. From the comparison, it can be observed that:
+    <br>1) The regenerated
+    speech obtained a 76.50%
+    human perception rate when compared with the original speech, indicating the influence brought by the YourTTS model. As a result, the
+    regenerated speech was utilized as the reference in our subjective evaluation, with results presented in Table III (b) of our
+    manuscript.
+    <br>2)
+    The anonymized speech demonstrated a lower human perception preservation rate when compared to the original speech than when compared to
+    the regenerated speech, i.e., 54.00% vs 93.50%.
+</div>
+<br>
+<table class="common-table">
+    <caption>Table VIII: Human perception preservation rates (%) on Ori-Regen,
+        Ori-Pro , Regen-Pro pairs.
+    </caption>
+    <thead>
+    <tr>
+        <th>Ori-Regen</th>
+        <th>Ori-Pro</th>
+        <!--        <th>Ori-Pro(ori)</th>-->
+        <!--        <th>Regen-Cls</th>-->
+        <th>Regen-Pro</th>
+        <!--        <th>Regen-Pro(beta=1)</th>-->
+        <!--        <th>Regen-Pro(<i>K</i>=10)</th>-->
+        <!--        <th>Regen-Pro(<i>K</i>=20)</th>-->
+        <!--        <th>Regen-Pro(ori)</th>-->
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>76.50</td>
+        <td>54.00</td>
+        <!--        <td>66.50</td>-->
+        <!--        <td>90.50</td>-->
+        <td>93.50</td>
+        <!--        <td>82.00</td>-->
+        <!--        <td>95.50</td>-->
+        <!--        <td>85.00</td>-->
+        <!--        <td>81.00</td>-->
+    </tr>
+    </tbody>
+    <tfoot>
+    </tfoot>
+</table>
+
+
+<h2 style="text-align: left">1.2.3 Application of original speech for perceptual loss calculation in (4)</h2>
+<div class="common-content">
+    Finally, experiments were conducted by replacing the regenerated speech with the original speech for perceptual loss calculation in (4).
+    Experiments were conducted in both ignorant and informed scenarios, following their respective configurations
+    outlined in Section V-B-1) and V-B-2 in the manuscript. Besides, the human perception evaluation was performed following the
+    configurations presented in Section V-C-2) in the manuscript. With the results, Table I and II are expanded to be Table IX and X ,
+    respectively. The human perception preservation rates are presented in XI.
+
+</div>
+<br>
+
+<table class="common-table">
+    <caption>TABLE IX: The EERs (%) obtained in the ignorant scenario. The results include those obtained on the original, regenerated, and
+        speaker-adversarial (Adv) speech using MI-FGSM, NI-FGSM, and GRA methods, as well as the corresponding anonymized speech generated
+        with our proposed (Pro) method. The evaluations conducted on ECAPA-TDNN (ECAPA), ResNet (Res), and i-vector (ivec) are presented.
+        Pro(Ori) indicates the original speech used in perceptual loss computation.
+    </caption>
+    <thead>
+    <tr>
+        <th rowspan="2"></th>
+        <th rowspan="2">Ori</th>
+        <th rowspan="2">Regen</th>
+        <th colspan="3" style="text-align: center;">MI-FGSM</th>
+        <th colspan="3" style="text-align: center;">NI-FGSM</th>
+        <th colspan="3" style="text-align: center;">GRA</th>
+    </tr>
+    <tr>
+        <th>Adv</th>
+        <th>Pro</th>
+
+        <th>Pro(ori)</th>
+        <th>Adv</th>
+        <th>Pro</th>
+
+        <th>Pro(ori)</th>
+        <th>Adv</th>
+        <th>Pro</th>
+
+        <th>Pro(ori)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>ECAPA</td>
+        <td>0.39</td>
+        <td>2.96</td>
+        <td>7.96</td>
+        <td>3.34</td>
+
+
+        <td>3.54</td>
+        <td>7.20</td>
+        <td>3.92</td>
+
+        <td>4.22</td>
+        <td>7.46</td>
+        <td>3.76</td>
+
+        <td>4.20</td>
+    </tr>
+    <tr>
+        <td>Res</td>
+        <td>0.38</td>
+        <td>3.02</td>
+        <td>1.17</td>
+        <td>3.51</td>
+
+
+        <td>4.53</td>
+        <td>1.85</td>
+        <td>4.23</td>
+
+        <td>5.23</td>
+        <td>1.78</td>
+        <td>4.17</td>
+
+        <td>4.51</td>
+    </tr>
+    <tr>
+        <td>ivec</td>
+        <td>0.66</td>
+        <td>2.55</td>
+        <td>1.48</td>
+        <td>2.89</td>
+
+        <td>2.87</td>
+        <td>1.33</td>
+        <td>2.59</td>
+
+        <td>2.90</td>
+        <td>1.41</td>
+        <td>2.82</td>
+
+        <td>3.20</td>
+    </tr>
+    </tbody>
+</table>
+<br>
+<table class="common-table">
+    <caption style="text-align: center; font-weight: bold; margin-bottom: 10px;">
+        TABLE X: The EERs(%) on the original, speaker-adversarial, and anonymized speech generated with our proposed method in the informed
+        scenario. The adversarial utterances (Adv) obtained with MI-FGSM, NI-FGSM, and GRA are presented, together with the corresponding
+        anonymized utterances generated by the proposed method (Pro). Pro(Ori) indicates the original speech used in perceptual loss
+        computation.
+    </caption>
+    <thead>
+    <tr>
+        <th style="border: 1px solid #000; padding: 8px; text-align: center;">Ori</th>
+        <th style="border: 1px solid #000; padding: 8px; text-align: center;" colspan="3">MI-FGSM</th>
+        <th style="border: 1px solid #000; padding: 8px; text-align: center;" colspan="3">NI-FGSM</th>
+        <th style="border: 1px solid #000; padding: 8px; text-align: center;" colspan="3">GRA</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td style="border: 1px solid #000; padding: 8px; text-align: center;" rowspan="2">3.53</td>
+        <td style="border: 1px solid #000; padding: 8px; text-align: center;">Adv</td>
+        <td style="border: 1px solid #000; padding: 8px; text-align: center;">Pro</td>
+        <!--        <td style="border: 1px solid #000; padding: 8px; text-align: center;">X</td>-->
+        <!--        <td style="border: 1px solid #000; padding: 8px; text-align: center;">X</td>-->
+        <td style="border: 1px solid #000; padding: 8px; text-align: center;">Pro(ori)</td>
+        <td style="border: 1px solid #000; padding: 8px; text-align: center;">Adv</td>
+        <td style="border: 1px solid #000; padding: 8px; text-align: center;">Pro</td>
+        <!--        <td style="border: 1px solid #000; padding: 8px; text-align: center;">X</td>-->
+        <!--        <td style="border: 1px solid #000; padding: 8px; text-align: center;">X</td>-->
+        <td style="border: 1px solid #000; padding: 8px; text-align: center;">Pro(ori)</td>
+        <td style="border: 1px solid #000; padding: 8px; text-align: center;">Adv</td>
+        <td style="border: 1px solid #000; padding: 8px; text-align: center;">Pro</td>
+        <!--        <td style="border: 1px solid #000; padding: 8px; text-align: center;">X</td>-->
+        <!--        <td style="border: 1px solid #000; padding: 8px; text-align: center;">X</td>-->
+        <td style="border: 1px solid #000; padding: 8px; text-align: center;">Pro(ori)</td>
+    </tr>
+    <tr>
+        <td style="border: 1px solid #000; padding: 8px; text-align: center;">3.83</td>
+        <td style="border: 1px solid #000; padding: 8px; text-align: center;">5.73</td>
+        <!--        <td style="border: 1px solid #000; padding: 8px; text-align: center;">4.83</td>-->
+        <!--        <td style="border: 1px solid #000; padding: 8px; text-align: center;">6.69</td>-->
+        <td style="border: 1px solid #000; padding: 8px; text-align: center;">6.40</td>
+        <td style="border: 1px solid #000; padding: 8px; text-align: center;">3.86</td>
+        <td style="border: 1px solid #000; padding: 8px; text-align: center;">5.44</td>
+        <!--        <td style="border: 1px solid #000; padding: 8px; text-align: center;">4.90</td>-->
+        <!--        <td style="border: 1px solid #000; padding: 8px; text-align: center;">6.71</td>-->
+        <td style="border: 1px solid #000; padding: 8px; text-align: center;">6.32</td>
+        <td style="border: 1px solid #000; padding: 8px; text-align: center;">4.03</td>
+        <td style="border: 1px solid #000; padding: 8px; text-align: center;">5.13</td>
+        <!--        <td style="border: 1px solid #000; padding: 8px; text-align: center;">5.94</td>-->
+        <!--        <td style="border: 1px solid #000; padding: 8px; text-align: center;">6.23</td>-->
+        <td style="border: 1px solid #000; padding: 8px; text-align: center;">6.14</td>
+    </tr>
+    </tbody>
+</table>
+<br>
+
+<table class="common-table">
+    <caption>Table IX: Human perception preservation rates (%) on Ori-Pro, Ori-Pro(ori), Regen-Pro , Regen-Pro(ori) pairs.
+    </caption>
+    <thead>
+    <tr>
+        <!--        <th>Ori-Regen</th>-->
+        <th>Ori-Pro</th>
+        <th>Ori-Pro(ori)</th>
+        <!--        <th>Regen-Cls</th>-->
+        <th>Regen-Pro</th>
+        <!--        <th>Regen-Pro(beta=1)</th>-->
+        <!--        <th>Regen-Pro(<i>K</i>=10)</th>-->
+        <!--        <th>Regen-Pro(<i>K</i>=20)</th>-->
+        <th>Regen-Pro(ori)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <!--        <td>76.50</td>-->
+        <td>54.00</td>
+        <td>66.50</td>
+        <!--        <td>90.50</td>-->
+        <td>93.50</td>
+        <!--        <td>82.00</td>-->
+        <!--        <td>95.50</td>-->
+        <!--        <td>85.00</td>-->
+        <td>81.00</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    </tfoot>
+</table>
+<br>
+<div class="common-content">
+    As shown in Tables IX and XI, higher EERs were observed in both the ignorant and informed evaluation scenarios
+    compared with Pro. This indicates that Pro(ori) achieves better machine-discernible speaker attribute obscuration in both scenarios.
+    Furthermore, as shown in Table XII, Pro(ori) achieved a higher human perception rate compared to Pro when compared with the original
+    speech, demonstrating better human perception preservation capabilities. These results collectively validate the feasibility of using
+    the original speech as supervision.
+
+    As indicated with the results presented in Table VIII, to ensure a fair comparison, regenerated speech is applied as the reference for
+    human perception preservation evaluation.
+
+    To further explore the maximum performance of the proposed strategy for generating asynchronously anonymized speech by learning
+    from speaker-adversarial speech, the regenerated speech was used for perceptual loss computation. This approach demonstrated the highest
+    human perception preservation capability when the regenerated speech was applied as the reference speech.
 </div>
 
 
-<h3 style="text-align: left">Demo sample</h3>
+<h1 style="text-align: left">Demo sample</h1>
 <!-- 文件名: 7850-281318-0002.wav -->
 <div class="audio-container">
     <div style="width: 250px">
